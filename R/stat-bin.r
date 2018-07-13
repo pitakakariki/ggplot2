@@ -103,9 +103,6 @@ StatBin <- ggproto("StatBin", Stat,
       params$closed <- if (params$right) "right" else "left"
       params$right <- NULL
     }
-    if (!is.null(params$width)) {
-      stop("`width` is deprecated. Do you want `geom_bar()`?", call. = FALSE)
-    }
     if (!is.null(params$boundary) && !is.null(params$center)) {
       stop("Only one of `boundary` and `center` may be specified.", call. = FALSE)
     }
