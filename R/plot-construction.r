@@ -50,11 +50,7 @@
 
   if      (is.theme(e1))  add_theme(e1, e2, e2name)
   else if (is.ggplot(e1)) add_ggplot(e1, e2, e2name)
-  else if (is.ggproto(e1)) {
-    stop("Cannot add ggproto objects together.",
-         " Did you forget to add this object to a ggplot object?",
-         call. = FALSE)
-  }
+  else if (is.ggproto(e1)) list(e1, e2)
 }
 
 
